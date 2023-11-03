@@ -1,0 +1,19 @@
+{
+    "name": "sai",
+    "private": "true",
+    "author": "joshcunninghum",
+    "license": "MIT",
+    "workspaces": [
+        "client",
+        "bot"
+    ],
+    "scripts": {
+        "dev": "concurrently \"npm run dev -w client\" \"npm run start -w bot\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.0"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
