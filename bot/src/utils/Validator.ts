@@ -13,3 +13,9 @@ export function isFalsy(object: null | undefined | string | number | object) : b
 export function isTruthy(object: null | undefined | string | number | object) : boolean {
     return !isFalsy(object);
 }
+
+type Constructor<T> = new (...args: any[]) => T;
+
+export function typeCheck<T, U>(object: any, A: Constructor<T>, B: Constructor<U>) : number {
+    return object instanceof A ? 0 : object instanceof B ? 1 : -1;
+}
